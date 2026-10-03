@@ -1,0 +1,347 @@
+/* ═══════════════════════════════════════════════════════════════
+   NOYAN PLUMBING — DESIGN TOKENS & SYSTEM BASE STYLES
+   Restrained Luxury Palette: Purple & Warm Beige
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Typography */
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --text-h1: clamp(2.8rem, 5vw, 4.2rem);
+  --text-h2: clamp(2rem, 3.5vw, 2.8rem);
+  --text-h3: 1.4rem;
+  --text-body: 18px;
+  --text-body-mobile: 16px;
+  --text-eyebrow: 0.8rem;
+
+  /* Color System */
+  --color-primary: #3B1655;          /* Deep Regal Plum / Purple */
+  --color-primary-dark: #270D3A;     /* Shadow Plum */
+  --color-primary-light: #522075;    /* Vibrant Plum */
+  --color-accent: #78359F;           /* Refined Violet Accent */
+
+  --color-beige: #F6F3EE;            /* Soft Warm Beige */
+  --color-beige-surface: #EFE8DC;    /* Structural Light Beige */
+  --color-beige-border: #E2D8C7;     /* Hairline Card Border */
+  --color-beige-dark: #C9BAA7;       /* Muted Warm Accent */
+
+  --color-ink: #1C191E;              /* High-contrast Near-black Ink */
+  --color-ink-muted: #57525E;        /* Muted Charcoal for Secondary Text */
+  --color-ink-light: #76707E;        /* Subtle Detail Text */
+
+  --color-canvas: #FAF8F5;           /* Soft Off-White Canvas */
+  --color-canvas-alt: #F4EFEA;       /* Alternating Section Background */
+  --color-white: #FFFFFF;
+
+  /* Spacing Scale: strictly 4, 8, 16, 24, 32, 48, 64, 96, 128px */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  /* Layout */
+  --max-width: 1200px;
+  --section-py-desktop: 96px;
+  --section-py-tablet: 64px;
+  --section-py-mobile: 48px;
+  --page-px: clamp(16px, 4vw, 24px);
+  --header-height: 80px;
+
+  /* Depth & Finish */
+  --radius-sm: 8px;   /* buttons, inputs */
+  --radius-lg: 16px;  /* cards, images, modals */
+  --shadow-rest: 0 4px 20px -2px rgba(28, 25, 30, 0.05);
+  --shadow-hover: 0 12px 32px -4px rgba(28, 25, 30, 0.12);
+  --transition: 200ms ease;
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  color: var(--color-ink);
+  background-color: var(--color-canvas);
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: var(--text-body-mobile);
+  }
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-h1);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+p {
+  max-width: 65ch;
+  color: var(--color-ink-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+/* Scroll Offset for Anchors */
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+/* Core Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-px);
+  padding-right: var(--page-px);
+}
+
+/* Section Rhythm */
+.section {
+  padding-top: var(--section-py-desktop);
+  padding-bottom: var(--section-py-desktop);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding-top: var(--section-py-tablet);
+    padding-bottom: var(--section-py-tablet);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: var(--section-py-mobile);
+    padding-bottom: var(--section-py-mobile);
+  }
+}
+
+.section--alt {
+  background-color: var(--color-canvas-alt);
+}
+
+.section--primary {
+  background-color: var(--color-primary);
+  color: var(--color-beige);
+}
+
+.section--primary h2,
+.section--primary h3 {
+  color: var(--color-white);
+}
+
+.section--primary p {
+  color: #D8CCE2;
+}
+
+/* Eyebrow Label */
+.eyebrow {
+  display: inline-block;
+  font-size: var(--text-eyebrow);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-16);
+}
+
+.section--primary .eyebrow {
+  color: #DFC8F5;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), color var(--transition), border-color var(--transition);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-light);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn--light {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.btn--light:hover {
+  background-color: var(--color-beige);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.btn--outline-light {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn--outline-light:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Card Common */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-beige-border);
+  box-shadow: var(--shadow-rest);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-accent);
+}
+
+.service-card:hover .service-card-img {
+  transform: scale(1.05);
+}
+
+/* Form Controls */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-bottom: var(--space-24);
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: 0.02em;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-beige-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+  font-size: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(120, 53, 159, 0.12);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-ink-light);
+}
+
+/* Zero-Pill Inline Metadata */
+.metadata-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+}
+
+.metadata-separator {
+  color: var(--color-beige-dark);
+}
