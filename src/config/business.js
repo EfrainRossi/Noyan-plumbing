@@ -40,12 +40,12 @@ export const business = {
     sectionAlt: "#F4EFEA",    // Alternating warm background
   },
 
-  // Imagery (High-Resolution local generated assets)
+  // Imagery (High-Resolution public assets for dev and production)
   images: {
-    hero: "/src/assets/images/hero_luxury_plumbing_1791027320495.jpg",
-    about: "/src/assets/images/about_plumber_workshop_1791027367988.jpg",
-    bathroomCraft: "/src/assets/images/service_bathroom_craft_1791027338899.jpg",
-    leakDetection: "/src/assets/images/service_leak_detection_1791027352642.jpg",
+    hero: "/images/hero_luxury_plumbing_1791027320495.jpg",
+    about: "/images/about_plumber_workshop_1791027367988.jpg",
+    bathroomCraft: "/images/service_bathroom_craft_1791027338899.jpg",
+    leakDetection: "/images/service_leak_detection_1791027352642.jpg",
   },
 
   // Navigation Links
@@ -65,7 +65,7 @@ export const business = {
       description: "Quick detection and repair of leaking pipes, taps, toilets and plumbing connections.",
       category: "Emergency & Diagnostic",
       featured: true,
-      image: "/src/assets/images/service_leak_detection_1791027352642.jpg",
+      image: "/images/service_leak_detection_1791027352642.jpg",
     },
     {
       id: "burst-pipe-repair",
@@ -73,7 +73,7 @@ export const business = {
       description: "Fast repair and replacement of damaged or burst water pipes to protect your property.",
       category: "Urgent Repair",
       featured: true,
-      image: "/src/assets/images/about_plumber_workshop_1791027367988.jpg",
+      image: "/images/about_plumber_workshop_1791027367988.jpg",
     },
     {
       id: "bathroom-plumbing",
@@ -81,7 +81,7 @@ export const business = {
       description: "Complete bathroom plumbing, pipe connections and luxury fixture installations.",
       category: "Installation & Remodel",
       featured: true,
-      image: "/src/assets/images/service_bathroom_craft_1791027338899.jpg",
+      image: "/images/service_bathroom_craft_1791027338899.jpg",
     },
     {
       id: "blocked-drains",
